@@ -17,7 +17,7 @@
 					</a>	
 				</li>
 				<li class="btn">
-					<a href="#">
+					<a href="acheter.php">
 						Acheter
 					</a>
 				</li>
