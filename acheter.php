@@ -23,16 +23,16 @@
     <body>
         <?php include 'menu_navigation.php'; ?>
         <div id = content>
-            <p>
                 <h3>Les produits</h3>
                 <?php 
                 //var_dump($contenu);
                 $i = 0;
                 while ( $i + 3 < $taille_contenue) {
                     for( $j = 0; $j < 3; $j = $j + 1) {
-                        //printf("%s pour %d euros _\n_ disponible chez %s.\n",$contenu[$i + $j]["model"],$contenu[$i + $j]["price"],$contenu[$i + $j]["contact"]);
+                        $tempo_photo = $contenu[$i + $j]["photo"];
                         ?>
                         <div class="produit">
+                        <img src="img/logo.png" alt="sa fonctionne">
                         <?php
                         echo $contenu[$i + $j]["askbid"]," ",$contenu[$i + $j]["model"]," pour ",$contenu[$i + $j]["price"],". Pour rentrer en contact appeler le ",$contenu[$i + $j]["contact"];
                         ?>
@@ -40,12 +40,12 @@
                         <?php
                     }
                     $i = $i + 3;
-                    //echo "*\n*";
                 }
                 while ($i < $taille_contenue) {
-                    //printf("%s pour %d euros disponible chez %s.\n",$contenu[$i]["model"],$contenu[$i]["price"],$contenu[$i]["contact"]);
+                    $tempo_photo = $contenu[$i]["photo"];
                     ?>
                     <div class="produit">
+                    <img class="image_produit" src=<?php echo $tempo_photo ?> alt="Nous excuson pour la gène occasioné"/>
                     <?php
                     echo $contenu[$i]["askbid"]," ",$contenu[$i]["model"]," pour ",$contenu[$i]["price"],". Pour rentrer en contact appeler le ",$contenu[$i]["contact"];
                     ?>
@@ -54,7 +54,6 @@
                     $i = $i + 1;
                 }
                 ?>
-            </p>
         </div>
     </body>
 </html>

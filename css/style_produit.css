@@ -103,3 +103,8 @@ div#footer{
     border:solid#000000;
     display: inline-block;
 }
+
+.image_produit{
+	width:10%;
+	display: center;
+}

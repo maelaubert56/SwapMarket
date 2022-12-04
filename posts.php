@@ -42,6 +42,7 @@
             <input type="price" name="price" id="price" placeholder="votre prix" required>
 			<input type="contact" name="contact" id="contact" placeholder="votre n° de tel" required>
             <input type="askbid" name="askbid" id="askbid" placeholder="vente ou achat ?" required>
+			<input type="photo" name="photo" id="photo" placeholder="copier le lien internet vers une photo de l'article" required>
 			<input type="submit" name="formulaire" id="formulaire" value="Poster">
 		</form>
 	</div>
@@ -52,12 +53,13 @@
 			extract($_POST);
 
 			if(!empty($model) && !empty($price) && !empty($contact) && !empty($askbid) ){
-                $q = $db->prepare("INSERT INTO posts(model,price,contact,askbid) VALUES(:model,:price,:contact,:askbid)");
+                $q = $db->prepare("INSERT INTO posts(model,price,contact,askbid,photo) VALUES(:model,:price,:contact,:askbid,:photo)");
                 $q->execute([
                 'model' => $model,
                 'price' => $price,
                 'contact' => $contact,
-                'askbid' => $askbid
+                'askbid' => $askbid,
+				'photo' => $photo
                 
                 ]);
                 echo "Le post à été ajouté";
