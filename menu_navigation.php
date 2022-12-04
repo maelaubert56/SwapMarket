@@ -17,12 +17,12 @@
 					</a>	
 				</li>
 				<li class="btn">
-					<a href="acheter.php">
+					<a href="posts.php">
 						Acheter
 					</a>
 				</li>
 				<li class="btn">
-					<a href="#">
+					<a href="acheter.php">
 						Vendre
 					</a>
 				</li>
