@@ -45,7 +45,9 @@
                     $tempo_photo = $contenu[$i]["photo"];
                     ?>
                     <div class="produit">
-                    <img class="image_produit" src=<?php echo $tempo_photo ?> alt="Nous excuson pour la gène occasioné"/>
+                        <h3>
+                            <img class="image_produit" src=<?php echo $tempo_photo ?> alt="Nous excuson pour la gène occasioné"/>
+                        </h3>
                     <?php
                     echo $contenu[$i]["askbid"]," ",$contenu[$i]["model"]," pour ",$contenu[$i]["price"],". Pour rentrer en contact appeler le ",$contenu[$i]["contact"];
                     ?>
@@ -54,6 +56,5 @@
                     $i = $i + 1;
                 }
                 ?>
-        </div>
     </body>
 </html>

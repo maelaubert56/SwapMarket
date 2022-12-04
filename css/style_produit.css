@@ -97,14 +97,16 @@ div#footer{
 
 .produit{
     width: 25%;
+	height: 50%;
     text-align: center;
-    background-color: #d3c9c9;
+    background-color: #FFFFFF;
     margin: 10px 10px 10px 10px;
     border:solid#000000;
     display: inline-block;
 }
 
 .image_produit{
-	width:10%;
+	border:solid#000000;
+	width:50%;
 	display: center;
 }
