@@ -43,6 +43,18 @@
                         <?php
                         echo $contenu[$i + $j]["askbid"]," ",$contenu[$i + $j]["model"]," pour ",$contenu[$i + $j]["price"],". Pour rentrer en contact appeler le ",$contenu[$i + $j]["contact"];
                         ?>
+                        <form method="post">
+                            <!-- <input type="image" src="img/supprimer_transparant.png" name="supprimer" id="supprimer" value="supprimer" width = 32px height= 32px/> -->
+                             <input type="submit" name=<?php echo $contenu[$i + $j]["id"]?> id=<?php echo $contenu[$i + $j]["id"]?> value="supprimer">
+                            <!-- <input type="button" name="supprimer" id="supprimer" value="supprimer"> -->
+                        </form>
+                        <?php
+                        if(isset($_POST[$contenu[$i + $j]["id"]])) {
+                            printf("Voulez-vous vraiment supprimez cette annonce ?");
+                            $q = $db->prepare("DELETE FROM posts WHERE id=:supprimer");
+                            $q->execute(['supprimer' =>  $contenu[$i + $j]["id"]]);
+                        }
+                        ?>
                         </div>
                         <?php
                     }
