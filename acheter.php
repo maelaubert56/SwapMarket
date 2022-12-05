@@ -45,7 +45,7 @@
                         ?>
                         <form method="post">
                             <!-- <input type="image" src="img/supprimer_transparant.png" name="supprimer" id="supprimer" value="supprimer" width = 32px height= 32px/> -->
-                             <input type="submit" name=<?php echo $contenu[$i + $j]["id"]?> id=<?php echo $contenu[$i + $j]["id"]?> value="supprimer">
+                             <input type="submit" name=<?php echo $contenu[$i + $j]["id"]?> id=<?php echo $contenu[$i + $j]["id"]?> value="-">
                             <!-- <input type="button" name="supprimer" id="supprimer" value="supprimer"> -->
                         </form>
                         <?php
@@ -70,7 +70,7 @@
                         <?php echo $contenu[$i]["askbid"]," ",$contenu[$i]["model"]," pour ",$contenu[$i]["price"],". Pour rentrer en contact appeler le ",$contenu[$i]["contact"]; ?>
                         <form method="post">
                             <!-- <input type="image" src="img/supprimer_transparant.png" name="supprimer" id="supprimer" value="supprimer" width = 32px height= 32px/> -->
-                             <input type="submit" name=<?php echo $contenu[$i]["id"]?> id=<?php echo $contenu[$i]["id"]?> value="supprimer">
+                             <input type="submit" name=<?php echo $contenu[$i]["id"]?> id=<?php echo $contenu[$i]["id"]?> value="-">
                             <!-- <input type="button" name="supprimer" id="supprimer" value="supprimer"> -->
                         </form>
                         <?php
