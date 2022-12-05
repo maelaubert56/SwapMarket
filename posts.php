@@ -41,8 +41,11 @@
 			<input type="model" name="model" id="model" placeholder="votre modèle" required>
             <input type="price" name="price" id="price" placeholder="votre prix" required>
 			<input type="contact" name="contact" id="contact" placeholder="votre n° de tel" required>
-            <input type="askbid" name="askbid" id="askbid" placeholder="vente ou achat ?" required>
-			<input type="photo" name="photo" id="photo" placeholder="copier le lien internet vers une photo de l'article" required>
+			<p>Vente ou achat ?</br>
+			<input type="radio" name="askbid" id="askbid" value="Vend" required>vente</br>
+			<input type="radio" name="askbid" id="askbid" value="Achète" required>achat</p>
+            <!-- <input type="askbid" name="askbid" id="askbid" placeholder="vente ou achat ?" required> -->
+			<input type="url" name="photo" id="photo" placeholder="copier le lien internet vers une photo de l'article" required>
 			<input type="submit" name="formulaire" id="formulaire" value="Poster">
 		</form>
 	</div>
@@ -53,13 +56,15 @@
 			extract($_POST);
 
 			if(!empty($model) && !empty($price) && !empty($contact) && !empty($askbid) ){
-                $q = $db->prepare("INSERT INTO posts(model,price,contact,askbid,photo) VALUES(:model,:price,:contact,:askbid,:photo)");
+				$id = random_int(1,30);
+                $q = $db->prepare("INSERT INTO posts(model,price,contact,askbid,photo,id) VALUES(:model,:price,:contact,:askbid,:photo,:id)");
                 $q->execute([
                 'model' => $model,
                 'price' => $price,
                 'contact' => $contact,
                 'askbid' => $askbid,
-				'photo' => $photo
+				'photo' => $photo,
+				'id' => $id
                 
                 ]);
                 echo "Le post à été ajouté";

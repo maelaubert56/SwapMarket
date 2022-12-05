@@ -1,13 +1,13 @@
 <?php
-    session_start();
-    $currentPage = "Acheter";
-    include 'includes/database.php';
-    $acces = mysqli_connect("localhost","root","","siteweb");
-    $choix_table = "SELECT * from posts";
-    $ensemble_post = mysqli_query($acces,$choix_table);
-    $contenu = mysqli_fetch_all($ensemble_post, MYSQLI_BOTH);
-    $taille_contenue = mysqli_num_rows($ensemble_post);
-    mysqli_close($acces);
+   session_start();
+   $currentPage = "Acheter";
+   //include 'includes/database.php';
+   $acces = mysqli_connect("localhost","root","","siteweb");
+   $choix_table = "SELECT * from posts";
+   $ensemble_post = mysqli_query($acces,$choix_table);
+   $contenu = mysqli_fetch_all($ensemble_post, MYSQLI_BOTH);
+   $taille_contenue = mysqli_num_rows($ensemble_post);
+   mysqli_close($acces);
 ?>
 
 
@@ -22,6 +22,11 @@
     </head>
     <body>
         <?php include 'menu_navigation.php'; ?>
+        <?php  
+
+		include 'includes/database.php';
+		global $db;
+	?>
         <div id = content>
                 <h3>Les produits</h3>
                 <?php 
@@ -32,7 +37,9 @@
                         $tempo_photo = $contenu[$i + $j]["photo"];
                         ?>
                         <div class="produit">
-                        <img src="img/logo.png" alt="sa fonctionne">
+                        <h3>
+                            <img class="image_produit" src=<?php echo $tempo_photo ?> alt="Nous excuson pour la gène occasioné"/>
+                        </h3>
                         <?php
                         echo $contenu[$i + $j]["askbid"]," ",$contenu[$i + $j]["model"]," pour ",$contenu[$i + $j]["price"],". Pour rentrer en contact appeler le ",$contenu[$i + $j]["contact"];
                         ?>
@@ -48,9 +55,18 @@
                         <h3>
                             <img class="image_produit" src=<?php echo $tempo_photo ?> alt="Nous excuson pour la gène occasioné"/>
                         </h3>
-                    <?php
-                    echo $contenu[$i]["askbid"]," ",$contenu[$i]["model"]," pour ",$contenu[$i]["price"],". Pour rentrer en contact appeler le ",$contenu[$i]["contact"];
-                    ?>
+                        <?php echo $contenu[$i]["askbid"]," ",$contenu[$i]["model"]," pour ",$contenu[$i]["price"],". Pour rentrer en contact appeler le ",$contenu[$i]["contact"]; ?>
+                        <form method="post">
+                            <!-- <input type="image" src="img/supprimer_transparant.png" name="supprimer" id="supprimer" value="supprimer" width = 32px height= 32px/> -->
+                             <input type="submit" name=<?php echo $contenu[$i]["id"]?> id=<?php echo $contenu[$i]["id"]?> value="supprimer">
+                            <!-- <input type="button" name="supprimer" id="supprimer" value="supprimer"> -->
+                        </form>
+                        <?php
+                        if(isset($_POST[$contenu[$i]["id"]])) {
+                            $q = $db->prepare("DELETE FROM posts WHERE id=:supprimer");
+                            $q->execute(['supprimer' =>  $contenu[$i]["id"]]);
+                        }
+                        ?>
                     </div>
                     <?php
                     $i = $i + 1;
