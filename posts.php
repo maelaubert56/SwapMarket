@@ -56,7 +56,7 @@
 			extract($_POST);
 
 			if(!empty($model) && !empty($price) && !empty($contact) && !empty($askbid) ){
-				$id = random_int(1,30);
+				$id = random_int(1,3000000);
                 $q = $db->prepare("INSERT INTO posts(model,price,contact,askbid,photo,id) VALUES(:model,:price,:contact,:askbid,:photo,:id)");
                 $q->execute([
                 'model' => $model,

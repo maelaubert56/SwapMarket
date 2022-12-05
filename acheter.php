@@ -63,6 +63,7 @@
                         </form>
                         <?php
                         if(isset($_POST[$contenu[$i]["id"]])) {
+                            printf("Voulez-vous vraiment supprimez cette annonce ?");
                             $q = $db->prepare("DELETE FROM posts WHERE id=:supprimer");
                             $q->execute(['supprimer' =>  $contenu[$i]["id"]]);
                         }
