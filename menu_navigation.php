@@ -18,12 +18,12 @@
 				</li>
 				<li class="btn">
 					<a href="posts.php">
-						Acheter
+						Poster une annonce
 					</a>
 				</li>
 				<li class="btn">
 					<a href="acheter.php">
-						Vendre
+						Produits
 					</a>
 				</li>
 			</ul>

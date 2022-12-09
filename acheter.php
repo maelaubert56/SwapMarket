@@ -1,6 +1,6 @@
 <?php
    session_start();
-   $currentPage = "Acheter";
+   $currentPage = "Products";
    //include 'includes/database.php';
    $acces = mysqli_connect("localhost","root","","siteweb");
    $choix_table = "SELECT * from posts";
@@ -21,25 +21,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <?php include 'menu_navigation.php'; ?>
-        <?php  
-
-		include 'includes/database.php';
+        <?php 
+        include 'menu_navigation.php'; 
+        include 'includes/database.php';
 		global $db;
-	?>
+	    ?>
+
         <div id = content>
                 <h3>Les produits</h3>
+                <link href="./home.css" rel="stylesheet" />
+                    <div class="home-container">
+                        <div class="home-feature-card">
+                        <div class="home-container1">
+                            <div class="home-container2">
+                            <div class="home-container3">
+                                <h2 class="home-text">Nom chaussure</h2>
+                                <button class="home-button button">
+                                <svg viewBox="0 0 1024 1024" class="home-icon">
+                                    <path
+                                    d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                                    ></path>
+                                </svg>
+                                </button>
+                            </div>
+                            </div>
+                        </div>
+                        <img
+                            alt="image"
+                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHNob2VzfGVufDB8fHx8MTY3MDM0MTgyNg&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=200"
+                            class="home-image"
+                        />
+                        <span class="home-text1">Price : 80€</span>
+                        <span class="home-text2">Contact : 0780415684 </span>
+                        </div>
+                    </div>
                 <?php 
                 //var_dump($contenu);
                 $i = 0;
-                
+
                 while ($i < $taille_contenue) {
                     $tempo_photo = $contenu[$i]["photo"];
                     ?>
+                    
+
                     <div class="produit">
                         <h3>
                             <?php echo $contenu[$i]["askbid"],"</br>"; ?>
-                            <img class="image_produit" src=<?php echo $tempo_photo ?> alt="Image indisponible"/>
+                            <img class="image_produit" src=<?php echo $tempo_photo ?> alt="image indisponible..."/>
                         </h3>
                             <?php echo $contenu[$i]["model"],"</br> Prix : ",$contenu[$i]["price"],"€</br>Contact : ",$contenu[$i]["contact"]; ?>
                         <form method="post">

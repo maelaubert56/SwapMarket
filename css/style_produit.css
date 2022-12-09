@@ -103,6 +103,7 @@ div#footer{
     margin: 10px 10px 10px 10px;
     border:solid#000000;
     display: inline-block;
+	border-radius:3px;
 }
 
 .image_produit{
@@ -110,3 +111,109 @@ div#footer{
 	width:50%;
 	display: center;
 }
+
+
+
+
+
+
+.home-container {
+	width: 100%;
+	display: flex;
+	overflow: auto;
+	min-height: 100vh;
+	align-items: center;
+	flex-direction: column;
+  }
+  .home-feature-card {
+	width: 164px;
+	height: 139px;
+	display: flex;
+	max-width: var(--dl-size-size-maxwidth);
+	box-shadow: 5px 5px 10px 0px rgba(18, 18, 18, 0.1);
+	transition: 0.3s;
+	align-items: flex-start;
+	padding-top: var(--dl-space-space-halfunit);
+	border-color: var(--dl-color-gray-black);
+	border-width: 2px;
+	padding-left: 10px;
+	border-radius: var(--dl-radius-radius-radius8);
+	margin-bottom: 0px;
+	padding-right: 5px;
+	flex-direction: column;
+	padding-bottom: var(--dl-space-space-halfunit);
+	justify-content: flex-start;
+	background-color: #ffffff;
+  }
+  .home-feature-card:hover {
+	transform: scale(1.02);
+  }
+  .home-container1 {
+	flex: 0 0 auto;
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+  }
+  .home-container2 {
+	flex: 0 0 auto;
+	width: auto;
+	height: auto;
+	display: flex;
+	position: relative;
+	align-items: flex-start;
+	justify-content: flex-start;
+  }
+  .home-container3 {
+	flex: 0 0 auto;
+	width: 130px;
+	height: 17px;
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 5px;
+	justify-content: space-between;
+  }
+  .home-text {
+	height: 17px;
+	font-size: 12px;
+	align-self: flex-start;
+	font-weight: 700;
+	margin-bottom: 2px;
+	text-transform: capitalize;
+  }
+  .home-button {
+	width: 15px;
+	height: 15px;
+	display: flex;
+	font-size: 8px;
+	align-self: flex-start;
+	text-align: center;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	flex-direction: row;
+	padding-bottom: 0px;
+  }
+  .home-icon {
+	width: 24px;
+	height: 100%;
+  }
+  .home-image {
+	width: 100px;
+	align-self: center;
+	object-fit: cover;
+	margin-bottom: 5px;
+  }
+  .home-text1 {
+	font-size: 10px;
+	align-self: center;
+  }
+  .home-text2 {
+	font-size: 10px;
+	align-self: center;
+	margin-bottom: 0px;
+  }
+  
+
+
