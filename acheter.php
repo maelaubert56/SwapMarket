@@ -29,6 +29,7 @@
 
         <div id = content>
                 <h3>Les produits</h3>
+                <!--
                 <link href="./home.css" rel="stylesheet" />
                     <div class="home-container">
                         <div class="home-feature-card">
@@ -55,6 +56,7 @@
                         <span class="home-text2">Contact : 0780415684 </span>
                         </div>
                     </div>
+-->
                 <?php 
                 //var_dump($contenu);
                 $i = 0;
