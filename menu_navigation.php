@@ -1,6 +1,6 @@
 <div id = "header">
 	<div class = "leftbox">
-		<img src="img/logo.png" width="40" height="40">
+		<img src="img/logo.png" width="50" height="40">
 		<p>
 			<h1>
 				SwapMarket
@@ -12,7 +12,7 @@
 		<nav class="menu-nav">
 			<ul>
 				<li class="btn">
-					<a href="index.php">
+					<a href="https://jumperocampos.mystrikingly.com/">
 						Accueil
 					</a>	
 				</li>

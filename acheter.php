@@ -26,11 +26,9 @@
         include 'includes/database.php';
 		global $db;
 	    ?>
-
         <div id = content>
                 <h3>Les produits</h3>
                 <link href="./home.css" rel="stylesheet" />
-                    <div class="home-container">
                         <div class="home-feature-card">
                         <div class="home-container1">
                             <div class="home-container2">
@@ -54,7 +52,6 @@
                         <span class="home-text1">Price : 80€</span>
                         <span class="home-text2">Contact : 0780415684 </span>
                         </div>
-                    </div>
                 <?php 
                 //var_dump($contenu);
                 $i = 0;
